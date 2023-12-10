@@ -10,9 +10,9 @@ public class Flag : MonoBehaviour
     {
         if (other.TryGetComponent<Collector>(out Collector collector))
         {
-            if (collector.Resource == 5)
+            if (collector.Resource == _base.PriceBase)
             {
-                collector.TransferResources(-5);
+                collector.TransferResources(-_base.PriceBase);
                 collector.TakePositionBase(Instantiate(_base, transform.position, Quaternion.identity).transform.position);
                 collector.TransferResource();
                 Remove();

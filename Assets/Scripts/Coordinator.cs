@@ -19,13 +19,13 @@ public class Coordinator : MonoBehaviour
     {
         while (true)
         {
-            if (_base.IsFlag && _base.CoutnResources == 5)
+            if (_base.IsFlag && _base.CoutnResources == _base.PriceBase)
             {
                 foreach (Collector collector in _base.Collectors)
                 {
                     if (collector.IsFree)
                     {
-                        collector.TransferResources(5);
+                        collector.TransferResources(_base.PriceBase);
                         collector.TakeTarget(_base.targetFlag.transform.position);
                         break;
                     }

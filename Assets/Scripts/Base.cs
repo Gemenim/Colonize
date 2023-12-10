@@ -7,6 +7,8 @@ public class Base : MonoBehaviour
 {
     [SerializeField] private Flag _flag;
     [SerializeField] private float _size;
+    [SerializeField] private int _priceBase;
+    [SerializeField] private int _priceBot;
 
     private List<Collector> _collectors = new List<Collector>();
     private BotSpawner _spawner;
@@ -22,6 +24,8 @@ public class Base : MonoBehaviour
 
     public List<Collector> Collectors => _collectors;
     public int CoutnResources => _countResources;
+    public int PriceBase => _priceBase;
+    public int PriceBot => _priceBot;
     public Flag targetFlag => _targetFlag;
     public bool IsFlag => _isFlag;
 
@@ -39,16 +43,16 @@ public class Base : MonoBehaviour
     {
         if (_isFlag)
         {
-            if (_countResources >= 5)
+            if (_countResources >= _priceBase)
             {
-                _countResources -= 5;
+                _countResources -= _priceBase;
                 _isFlag = false;
             }
         }
-        else if (_countResources == 3)
+        else if (_countResources == _priceBot)
         {
             _spawner.CreatNewBot();
-            _countResources -= 3;
+            _countResources -= _priceBot;
         }
     }
 
