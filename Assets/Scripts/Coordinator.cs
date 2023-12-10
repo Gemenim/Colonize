@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Base))]
 public class Coordinator : MonoBehaviour
 {
     private Base _base;
