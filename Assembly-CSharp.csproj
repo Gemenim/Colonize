@@ -65,7 +65,7 @@
     <Compile Include="Assets\Scripts\Resources.cs" />
     <Compile Include="Assets\Scripts\Base.cs" />
     <Compile Include="Assets\Scripts\BotSpawner.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\MoverCamera.cs" />
     <Compile Include="Assets\Scripts\CreatorResource.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
   </ItemGroup>
